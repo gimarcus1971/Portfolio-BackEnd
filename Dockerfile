@@ -1,7 +1,7 @@
-FROM amazoncorretto:11
+FROM amazoncorretto:8-alpine-jdk
 
 MAINTAINER gimarcus
 
-COPY target/gimarcus-0.0.1-SNAPSHOT.jar gimarcus-0.0.1-SNAPSHOT.jar
+COPY target/gimarcus-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java","-jar","/gimarcus-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
