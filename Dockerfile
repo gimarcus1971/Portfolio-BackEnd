@@ -1,4 +1,4 @@
-FROM amazoncorretto:1.8
+FROM amazoncorretto:11
 
 MAINTAINER gimarcus
 
