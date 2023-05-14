@@ -25,6 +25,7 @@ com\portfolio\gimarcus\Repository\RExperiencia.class
 com\portfolio\gimarcus\Security\Enums\RolNombre.class
 com\portfolio\gimarcus\Security\Entity\UsuarioPrincipal.class
 com\portfolio\gimarcus\Service\Seducacion.class
+com\portfolio\gimarcus\WebConfig.class
 com\portfolio\gimarcus\Controller\PersonaController.class
 com\portfolio\gimarcus\Service\ImpPersonaService.class
 com\portfolio\gimarcus\Security\Controller\AuthController.class
