@@ -18,7 +18,6 @@ com\portfolio\gimarcus\Repository\REducacion.class
 com\portfolio\gimarcus\Security\Entity\Rol.class
 com\portfolio\gimarcus\Security\Service\RolService.class
 com\portfolio\gimarcus\Security\MainSecurity.class
-.netbeans_automatic_build
 com\portfolio\gimarcus\Security\Service\UserDetailsImpl.class
 com\portfolio\gimarcus\Dto\dtoPersona.class
 com\portfolio\gimarcus\Security\Repository\iRolRepository.class
