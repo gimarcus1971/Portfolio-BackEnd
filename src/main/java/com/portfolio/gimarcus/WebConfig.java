@@ -4,14 +4,7 @@
  */
 package com.portfolio.gimarcus;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 /**
  *
@@ -32,23 +25,23 @@ public class WebConfig implements WebMvcConfigurer {
     }
 }
 */
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+
 @Configuration
-@EnableWebSecurity
-public class WebConfig extends WebSecurityConfigurerAdapter {
+class CustomRestMvcConfiguration {
 
-@Override
-protected void configure(HttpSecurity http) throws Exception {
-    http.antMatcher("/**").authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated();
-    http.cors().and().csrf().disable();
-}
-
-@Bean
-public WebMvcConfigurer corsConfigurer() {
-    return new WebMvcConfigurer() {
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/**").allowedMethods("*");
-        }
-    }; 
+    @Bean
+    public RepositoryRestConfigurer repositoryRestConfigurer() {
+        return new RepositoryRestConfigurer() {
+            @Override
+            public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+                cors.addMapping("/**")
+                    .allowedOrigins("https://portfolio-gimarcus.web.app");
+      }
+    };
   }
 }
