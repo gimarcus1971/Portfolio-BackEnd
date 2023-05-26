@@ -18,6 +18,7 @@ com\portfolio\gimarcus\Repository\REducacion.class
 com\portfolio\gimarcus\Security\Entity\Rol.class
 com\portfolio\gimarcus\Security\Service\RolService.class
 com\portfolio\gimarcus\Security\MainSecurity.class
+.netbeans_automatic_build
 com\portfolio\gimarcus\Security\Service\UserDetailsImpl.class
 com\portfolio\gimarcus\Dto\dtoPersona.class
 com\portfolio\gimarcus\Security\Repository\iRolRepository.class
@@ -25,7 +26,6 @@ com\portfolio\gimarcus\Repository\RExperiencia.class
 com\portfolio\gimarcus\Security\Enums\RolNombre.class
 com\portfolio\gimarcus\Security\Entity\UsuarioPrincipal.class
 com\portfolio\gimarcus\Service\Seducacion.class
-com\portfolio\gimarcus\WebConfig.class
 com\portfolio\gimarcus\Controller\PersonaController.class
 com\portfolio\gimarcus\Service\ImpPersonaService.class
 com\portfolio\gimarcus\Security\Controller\AuthController.class
