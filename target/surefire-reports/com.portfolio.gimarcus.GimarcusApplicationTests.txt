@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.portfolio.gimarcus.GimarcusApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.272 s - in com.portfolio.gimarcus.GimarcusApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.039 s - in com.portfolio.gimarcus.GimarcusApplicationTests
