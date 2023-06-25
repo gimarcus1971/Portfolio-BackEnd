@@ -20,7 +20,7 @@ public class GimarcusApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://portfolio-gimarcus.web.app", "http://localhost:4200", "http://localhost:8080").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("/**").allowedHeaders("*");
 			}
 		};
 	}
