@@ -10,6 +10,7 @@ import com.portfolio.gimarcus.Security.jwt.JwtTokenFilter;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -49,21 +50,21 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
         return new BCryptPasswordEncoder();
     }
 
-    @Configuration
-class ManagementWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
+    
+    @ConditionalOnProperty(name = "spring.security.enabled", havingValue = "false")
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .requestMatchers(
-                        )
-                .permitAll().anyRequest().authenticated().and().formLogin().and()
-                .httpBasic();
+        http.csrf().disable()
+            .authorizeRequests().antMatchers("/").permitAll();
     }
-
 }
     
     /*
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
@@ -76,10 +77,10 @@ class ManagementWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapte
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);           
     }
+
     */
-    
-    
-    
+
+
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
