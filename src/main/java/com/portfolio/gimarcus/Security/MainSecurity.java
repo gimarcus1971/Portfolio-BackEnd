@@ -50,12 +50,17 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     }
 
     @Configuration
-        public class SecurityConfig  extends WebSecurityConfigurerAdapter {
+class ManagementWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
     @Override
-        protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().anyRequest().permitAll();
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .requestMatchers(
+                        )
+                .permitAll().anyRequest().authenticated().and().formLogin().and()
+                .httpBasic();
     }
+
 }
     
     /*
@@ -63,7 +68,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
@@ -72,7 +77,9 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);           
     }
     */
-
+    
+    
+    
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
