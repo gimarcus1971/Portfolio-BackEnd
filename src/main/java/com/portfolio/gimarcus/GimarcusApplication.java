@@ -15,14 +15,14 @@ public class GimarcusApplication {
 		SpringApplication.run(GimarcusApplication.class, args);
 	}
 
-        @Bean
-    	public WebMvcConfigurer corsConfigurer() {
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("/**").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("/**").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}
-
+	
 }
