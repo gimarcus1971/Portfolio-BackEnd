@@ -12,7 +12,6 @@ com\portfolio\gimarcus\Entity\Persona.class
 com\portfolio\gimarcus\Entity\Educacion.class
 com\portfolio\gimarcus\Security\jwt\JwtProvider.class
 com\portfolio\gimarcus\Security\jwt\JwtEntryPoint.class
-com\portfolio\gimarcus\Security\MainSecurity$SecurityConfig.class
 com\portfolio\gimarcus\Repository\IPersonaRepository.class
 com\portfolio\gimarcus\GimarcusApplication.class
 com\portfolio\gimarcus\Repository\REducacion.class
